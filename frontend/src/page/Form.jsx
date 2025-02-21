@@ -25,7 +25,7 @@ const App = () => {
       }
 
       // Call the backend API with the valid JSON
-      const result = await axios.post("http://localhost:5000/bfhl", jsonData);
+      const result = await axios.post("https://bajaj-finservapi.vercel.app/bfhl", jsonData);
       setResponse(result.data);
     } catch (err) {
       setError("Invalid JSON input. Please correct the format.");
