@@ -1,6 +1,5 @@
 from flask import Flask, request, jsonify
 from flask_cors import CORS  # To handle CORS issues for frontend-backend communication
-import re
 
 app = Flask(__name__)
 CORS(app)  # Enable CORS for all routes
@@ -54,6 +53,10 @@ def get_bfhl():
     }
     return jsonify(response), 200
 
+# This handler is necessary for Vercel to work
+def handler(request):
+    return app(request)
 
-if __name__ == '__main__':
+# Flask app is exported as the entry point for the serverless function
+if __name__ == "__main__":
     app.run(debug=True)
