@@ -53,7 +53,7 @@ def get_bfhl():
     }
     return jsonify(response), 200
 
-# This handler is necessary for Vercel to work
+# handler for Vercel to work
 def handler(request):
     return app(request)
 
